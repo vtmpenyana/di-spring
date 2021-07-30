@@ -14,8 +14,7 @@ public class DiSpringApplication {
 	public static void main(String[] args) {
 		ApplicationContext ctx = SpringApplication.run(DiSpringApplication.class, args);
 		HelloController helloController = (HelloController) ctx.getBean("helloController");
-		String text = helloController.greet();
-		System.out.println(text);
+		System.out.println(helloController.greet());
 
 		//DI with the Spring Framework
 		System.out.println("-------------> Property Injected");
