@@ -1,6 +1,7 @@
 package com.vincent.dispring.controllers;
 
 import com.vincent.dispring.services.GreetingService;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -11,7 +12,7 @@ public class ConstructorInjectedController {
         return greetingService;
     }
 
-    public ConstructorInjectedController(GreetingService greetingService) {
+    public ConstructorInjectedController(@Qualifier("constructorGreetingService") GreetingService greetingService) {
         this.greetingService = greetingService;
     }
 }
